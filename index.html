@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТехноБетонКомплект - запчасти и автоматизация</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #F8FAFC;
+            color: #1E293B; /* Тёмно-серый для текста */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Шапка --- */
+        header {
+            background-color: #1E3A8A; /* Наш синий */
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: #BFDBFE; /* Светло-голубой */
+            font-size: 1.1rem;
+        }
+
+        /* --- Маркетинговый блок (Hero) --- */
+        .hero {
+            background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
+            border-bottom: 1px solid #E2E8F0;
+            padding: 4rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #1E3A8A;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .accent {
+            color: #2563EB;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #1E3A8A;
+        }
+
+        .feature-item h3 {
+            color: #1E3A8A;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* --- Отзывы --- */
+        .reviews {
+            background: white;
+            padding: 3rem 0;
+        }
+
+        .reviews h2 {
+            text-align: center;
+            color: #1E3A8A;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: #F8FAFC;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .review-author {
+            color: #1E3A8A;
+            font-weight: 600;
+        }
+
+        /* --- Услуги (кликабельные карточки) --- */
+        .services {
+            padding: 4rem 0;
+            background: #F1F5F9;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #1E3A8A;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #1E3A8A;
+            box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1E3A8A;
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #64748B;
+            font-size: 0.95rem;
+        }
+
+        /* --- Подвал / Колонтитул --- */
+        footer {
+            background: #1E3A8A;
+            color: white;
+            padding: 3rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contacts p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contacts a {
+            color: #BFDBFE;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contacts a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-address {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid #3B82F6;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #2563EB;
+            font-size: 0.9rem;
+            color: #BFDBFE;
+        }
+
+        .copyright a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 8px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Адаптация под телефоны */
+        @media (max-width: 768px) {
+            .hero-grid, .review-cards, .service-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <h1>ТехноБетонКомплект</h1>
+            <p>Надёжность. Опыт. Автоматизация.</p>
+        </div>
+    </header>
+
+    <!-- Маркетинговая часть (Hero + Опыт) -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h2>20 лет <span class="accent">укрепляем</span> бетонные заводы Беларуси</h2>
+                <p style="font-size: 1.2rem; color: #475569;">С 2004 года мы не просто продаём запчасти — мы внедряем решения, которые экономят до 30% бюджета на ремонтах.</p>
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>⚙️ Опыт</h3>
+                        <p>Более 50 успешных проектов автоматизации на заводах Минска и области.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>📞 24/7</h3>
+                        <p>Инженеры на связи. Шефмонтаж с выездом за 24 часа по РБ.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="background: #1E3A8A; border-radius: 30px; padding: 2rem; color: white; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+                <p style="font-size: 1.8rem; font-weight: 300;">Техника<br>работает<br><strong>годами</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews">
+        <div class="container">
+            <h2>Нас рекомендуют</h2>
+            <div class="review-cards">
+                <div class="review-card">
+                    <p>“Оперативно нашли редкую запчасть для импортного смесителя. Шефмонтаж провели за день. Цены адекватные.”</p>
+                    <div class="review-author">— Иван Петров, гл. инженер</div>
+                </div>
+                <div class="review-card">
+                    <p>“Делали автоматизацию дозаторов. Всё чётко, без лишних движений. Скрипты написали под наше старое оборудование.”</p>
+                    <div class="review-author">— ООО «МинскБетонСтрой»</div>
+                </div>
+                <div class="review-card">
+                    <p>“Отличная консультация! Помогли разобраться с электрикой, хотя мы не покупали запчасти, просто платная консультация.”</p>
+                    <div class="review-author">— Сергей Дмитриевич</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги (Кликабельные карточки) -->
+    <section class="services">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="service-grid">
+                <a href="#" class="service-card">
+                    <div class="service-icon">🔩</div>
+                    <h3>Запчасти</h3>
+                    <p>Редукторы, ремни, датчики, двигатели для бетонных узлов. В наличии и под заказ.</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon">👷</div>
+                    <h3>Шефмонтаж</h3>
+                    <p>Выезд специалиста, пусконаладка, обучение персонала. Работаем по всей РБ.</p>
+                </a>
+                <a href="#" class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Консультации</h3>
+                    <p>Аудит оборудования, помощь в ремонте, модернизация производства онлайн или на объекте.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал (Колонтитул) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Контакты -->
+                <div class="footer-contacts">
+                    <h3 style="color: white; margin-bottom: 1.5rem;">Свяжитесь с нами</h3>
+                    <p>📞 <a href="tel:+375XXXXXXXXX">+375 (29) XXX-XX-XX</a> (МТС)</p>
+                    <p>✉️ <a href="mailto:info@tehnobeton.by">info@tehnobeton.by</a></p>
+                    <p style="margin-top: 1rem;">
+                        <a href="#" style="background: #2563EB; padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 5px;">💬 Viber</a>
+                        <a href="#" style="background: #2563EB; padding: 8px 16px; border-radius: 30px; margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</a>
+                    </p>
+                </div>
+                <!-- Юр. адрес -->
+                <div class="footer-address">
+                    <h3 style="color: white; margin-bottom: 1rem;">📍 Офис в Минске</h3>
+                    <p>г. Минск, ул. Промышленная, д. 5, офис 407</p>
+                    <p style="color: #BFDBFE; margin-top: 1rem;">Время работы: Пн-Пт 9:00 - 18:00</p>
+                </div>
+            </div>
+
+            <!-- Копирайт с вашей иконкой -->
+            <div class="copyright">
+                Разработано совместно с 
+                <a href="https://t.me/Ksush_0" target="_blank">
+                    ✈️ @Ksush_0
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Заглушка для страниц услуг (просто чтобы показать, что переход есть) 
+         В реальном проекте тут будут ссылки на zapchasti.html, montazh.html и т.д. -->
+</body>
+</html>
