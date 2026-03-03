@@ -13,8 +13,8 @@
         }
 
         body {
-            background-color: #F8FAFC;
-            color: #1E293B; /* Тёмно-серый для текста */
+            background-color: #F8F4ED;  /* Теплый молочный фон */
+            color: #2C3E4F; /* Темный сине-серый для текста */
             line-height: 1.6;
         }
 
@@ -24,29 +24,66 @@
             padding: 0 20px;
         }
 
-        /* --- Шапка --- */
+        /* --- ОБНОВЛЕННАЯ ШАПКА --- */
         header {
-            background-color: #1E3A8A; /* Наш синий */
+            background: linear-gradient(135deg, #0B2A4A 0%, #143b5e 100%);
             color: white;
-            padding: 1.2rem 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #C9A959; /* Тонкая золотистая линия для статуса */
+            box-shadow: 0 10px 25px -10px rgba(11, 42, 74, 0.3);
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A959, #8B6B3C, #C9A959);
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 3.2rem;
             font-weight: 600;
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        header p {
-            color: #BFDBFE; /* Светло-голубой */
-            font-size: 1.1rem;
+        header .subtitle {
+            font-size: 1.4rem;
+            color: #E0D6C1;  /* Молочный текст */
+            font-weight: 300;
+            letter-spacing: 2px;
+            word-spacing: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+            margin-top: 0.5rem;
+        }
+
+        header .tagline {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #B6CDE0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
         }
 
         /* --- Маркетинговый блок (Hero) --- */
         .hero {
-            background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
-            border-bottom: 1px solid #E2E8F0;
+            background: #F5F2E9;  /* Молочный */
+            border-bottom: 1px solid #E2D9CC;
             padding: 4rem 0;
         }
 
@@ -59,14 +96,15 @@
 
         .hero h2 {
             font-size: 2.5rem;
-            color: #1E3A8A;
+            color: #0B2A4A;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
         .hero .accent {
-            color: #2563EB;
+            color: #1E4A6F;
             font-weight: 600;
+            border-bottom: 2px solid #C9A959;
         }
 
         .features {
@@ -77,28 +115,28 @@
         }
 
         .feature-item {
-            background: white;
+            background: #F8F4ED;
             padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #1E3A8A;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid #1E4A6F;
         }
 
         .feature-item h3 {
-            color: #1E3A8A;
+            color: #0B2A4A;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
 
         /* --- Отзывы --- */
         .reviews {
-            background: white;
+            background: #F5F2E9;
             padding: 3rem 0;
         }
 
         .reviews h2 {
             text-align: center;
-            color: #1E3A8A;
+            color: #0B2A4A;
             margin-bottom: 2rem;
             font-size: 2rem;
         }
@@ -110,32 +148,32 @@
         }
 
         .review-card {
-            background: #F8FAFC;
+            background: #F8F4ED;
             padding: 1.5rem;
             border-radius: 16px;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E2D9CC;
         }
 
         .review-card p {
             font-style: italic;
             margin-bottom: 1rem;
-            color: #334155;
+            color: #2C3E4F;
         }
 
         .review-author {
-            color: #1E3A8A;
+            color: #0B2A4A;
             font-weight: 600;
         }
 
         /* --- Услуги (кликабельные карточки) --- */
         .services {
             padding: 4rem 0;
-            background: #F1F5F9;
+            background: #ECE6DB;  /* Чуть темнее молочный */
         }
 
         .services h2 {
             text-align: center;
-            color: #1E3A8A;
+            color: #0B2A4A;
             margin-bottom: 2rem;
             font-size: 2rem;
         }
@@ -147,21 +185,22 @@
         }
 
         .service-card {
-            background: white;
+            background: #F8F4ED;
             border-radius: 20px;
             padding: 2rem 1.5rem;
             text-align: center;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
-            border: 1px solid transparent;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2D9CC;
+            box-shadow: 0 10px 20px -10px rgba(11, 42, 74, 0.1);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: #1E3A8A;
-            box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1);
+            border-color: #1E4A6F;
+            box-shadow: 0 20px 25px -5px rgba(11, 42, 74, 0.2);
+            background: white;
         }
 
         .service-icon {
@@ -170,19 +209,19 @@
         }
 
         .service-card h3 {
-            color: #1E3A8A;
+            color: #0B2A4A;
             margin-bottom: 0.8rem;
             font-size: 1.5rem;
         }
 
         .service-card p {
-            color: #64748B;
+            color: #4A5F73;
             font-size: 0.95rem;
         }
 
         /* --- Подвал / Колонтитул --- */
         footer {
-            background: #1E3A8A;
+            background: #0B2A4A;
             color: white;
             padding: 3rem 0 1rem 0;
             margin-top: 2rem;
@@ -203,7 +242,7 @@
         }
 
         .footer-contacts a {
-            color: #BFDBFE;
+            color: #D6C9B5;
             text-decoration: none;
             transition: color 0.2s;
         }
@@ -217,47 +256,62 @@
             background: rgba(255, 255, 255, 0.05);
             padding: 1.5rem;
             border-radius: 12px;
-            border-left: 3px solid #3B82F6;
+            border-left: 3px solid #C9A959;
         }
 
         .copyright {
             text-align: center;
             padding-top: 2rem;
             margin-top: 2rem;
-            border-top: 1px solid #2563EB;
+            border-top: 1px solid #1E4A6F;
             font-size: 0.9rem;
-            color: #BFDBFE;
+            color: #B6CDE0;
         }
 
         .copyright a {
             color: white;
             text-decoration: none;
-            background: rgba(255,255,255,0.1);
-            padding: 4px 8px;
+            background: rgba(201, 169, 89, 0.2);
+            padding: 4px 12px;
             border-radius: 20px;
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            transition: background 0.2s;
+        }
+
+        .copyright a:hover {
+            background: rgba(201, 169, 89, 0.4);
         }
 
         /* Адаптация под телефоны */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header .subtitle {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+            
             .hero-grid, .review-cards, .service-grid, .footer-grid {
                 grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка сайта -->
+    <!-- ОБНОВЛЕННАЯ ШАПКА -->
     <header>
         <div class="container">
             <h1>ТехноБетонКомплект</h1>
-            <p>Надёжность. Опыт. Автоматизация.</p>
+            <div class="subtitle">ИНЖИНИРИНГ · ПОСТАВКИ · АВТОМАТИЗАЦИЯ</div>
+            <div class="tagline">
+                Полный цикл обслуживания бетонных заводов: от редкой запчасти<br>
+                до полной автоматизации производства
+            </div>
         </div>
     </header>
 
@@ -266,7 +320,7 @@
         <div class="container hero-grid">
             <div>
                 <h2>20 лет <span class="accent">укрепляем</span> бетонные заводы Беларуси</h2>
-                <p style="font-size: 1.2rem; color: #475569;">С 2004 года мы не просто продаём запчасти — мы внедряем решения, которые экономят до 30% бюджета на ремонтах.</p>
+                <p style="font-size: 1.2rem; color: #4A5F73;">С 2004 года мы не просто продаём запчасти — мы внедряем решения, которые экономят до 30% бюджета на ремонтах.</p>
                 <div class="features">
                     <div class="feature-item">
                         <h3>⚙️ Опыт</h3>
@@ -278,8 +332,11 @@
                     </div>
                 </div>
             </div>
-            <div style="background: #1E3A8A; border-radius: 30px; padding: 2rem; color: white; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center;">
-                <p style="font-size: 1.8rem; font-weight: 300;">Техника<br>работает<br><strong>годами</strong></p>
+            <div style="background: #0B2A4A; border-radius: 30px; padding: 2rem; color: white; text-align: center; min-height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #C9A959;">
+                <p style="font-size: 1.8rem; font-weight: 300;">
+                    Техника<br>работает<br>
+                    <span style="font-size: 2.5rem; font-weight: 600; color: #C9A959;">годами</span>
+                </p>
             </div>
         </div>
     </section>
@@ -298,7 +355,7 @@
                     <div class="review-author">— ООО «МинскБетонСтрой»</div>
                 </div>
                 <div class="review-card">
-                    <p>“Отличная консультация! Помогли разобраться с электрикой, хотя мы не покупали запчасти, просто платная консультация.”</p>
+                    <p>“Отличная консультация! Помогли разобраться с электрикой, хотя мы не покупали запчасти.”</p>
                     <div class="review-author">— Сергей Дмитриевич</div>
                 </div>
             </div>
@@ -329,29 +386,26 @@
         </div>
     </section>
 
-    <!-- Подвал (Колонтитул) -->
+    <!-- Подвал -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- Контакты -->
                 <div class="footer-contacts">
                     <h3 style="color: white; margin-bottom: 1.5rem;">Свяжитесь с нами</h3>
-                    <p>📞 <a href="tel:+375XXXXXXXXX">+375 (29) XXX-XX-XX</a> (МТС)</p>
+                    <p>📞 <a href="tel:+375XXXXXXXXX">+375 (29) XXX-XX-XX</a></p>
                     <p>✉️ <a href="mailto:info@tehnobeton.by">info@tehnobeton.by</a></p>
                     <p style="margin-top: 1rem;">
-                        <a href="#" style="background: #2563EB; padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 5px;">💬 Viber</a>
-                        <a href="#" style="background: #2563EB; padding: 8px 16px; border-radius: 30px; margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</a>
+                        <a href="#" style="background: #1E4A6F; padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 5px;">💬 Viber</a>
+                        <a href="#" style="background: #1E4A6F; padding: 8px 16px; border-radius: 30px; margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</a>
                     </p>
                 </div>
-                <!-- Юр. адрес -->
                 <div class="footer-address">
-                    <h3 style="color: white; margin-bottom: 1rem;">📍 Офис в Минске</h3>
-                    <p>г. Минск, ул. Промышленная, д. 5, офис 407</p>
-                    <p style="color: #BFDBFE; margin-top: 1rem;">Время работы: Пн-Пт 9:00 - 18:00</p>
+                    <h3 style="color: white; margin-bottom: 1rem;">📍 Минск</h3>
+                    <p>ул. Промышленная, д. 5, офис 407</p>
+                    <p style="color: #D6C9B5; margin-top: 1rem;">Пн-Пт 9:00 - 18:00</p>
                 </div>
             </div>
 
-            <!-- Копирайт с вашей иконкой -->
             <div class="copyright">
                 Разработано совместно с 
                 <a href="https://t.me/Ksush_0" target="_blank">
@@ -360,8 +414,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Заглушка для страниц услуг (просто чтобы показать, что переход есть) 
-         В реальном проекте тут будут ссылки на zapchasti.html, montazh.html и т.д. -->
 </body>
-</html>
+    </html>
+                
