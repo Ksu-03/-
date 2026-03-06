@@ -1,1 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консультации по ремонту и монтажу | ТехноБетонКомплект</title>
+    <style>
+        /* ТОТ ЖЕ CSS, ЧТО В ШЕФМОНТАЖЕ, ТОЛЬКО КОНТЕНТ ДРУГОЙ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
 
+        body {
+            background-color: #F8F4ED;
+            color: #2C3E4F;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0B2A4A 0%, #143b5e 100%);
+            color: white;
+            padding: 1.5rem 0 1rem 0;
+            border-bottom: 3px solid #C9A959;
+        }
+
+        .header-top {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #E0D6C1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0 0.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: #E0D6C1;
+            text-decoration: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 1px solid transparent;
+        }
+
+        .main-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: #C9A959;
+        }
+
+        .main-nav a.active {
+            background: #C9A959;
+            color: #0B2A4A;
+            font-weight: 600;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: #0B2A4A;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #4A5F73;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .consult-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .consult-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #E2D9CC;
+            text-align: center;
+        }
+
+        .consult-card h3 {
+            color: #0B2A4A;
+            font-size: 1.8rem;
+            margin: 1rem 0;
+        }
+
+        .consult-card .price {
+            font-size: 1.5rem;
+            color: #C9A959;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .consult-card ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+
+        .consult-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #F0E8DD;
+        }
+
+        .consult-card li:before {
+            content: "✓ ";
+            color: #C9A959;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0B2A4A;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .btn-warning {
+            background: #C9A959;
+            color: #0B2A4A;
+        }
+
+        footer {
+            background: #0B2A4A;
+            color: white;
+            padding: 3rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contacts p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contacts a {
+            color: #D6C9B5;
+            text-decoration: none;
+        }
+
+        .footer-address {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid #C9A959;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #1E4A6F;
+        }
+
+        @media (max-width: 768px) {
+            .consult-options { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <h1><a href="index.html">ТехноБетонКомплект</a></h1>
+                <div class="subtitle">КОНСУЛЬТАЦИИ ЭКСПЕРТОВ</div>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="index.html">Главная</a>
+                <a href="zapchasti.html">Запчасти</a>
+                <a href="shefmontazh.html">Шефмонтаж</a>
+                <a href="konsultacii.html" class="active">Консультации</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Помощь в ремонте и модернизации</h2>
+            <p>Консультации от инженеров с 20-летним опытом. Онлайн или с выездом.</p>
+        </div>
+
+        <div class="consult-options">
+            <div class="consult-card">
+                <div style="font-size: 3rem;">📞</div>
+                <h3>Консультация по телефону</h3>
+                <div class="price">50 руб.</div>
+                <ul>
+                    <li>30 минут разговора</li>
+                    <li>Ответы на вопросы</li>
+                    <li>Рекомендации по ремонту</li>
+                </ul>
+                <a href="#" class="btn">Заказать</a>
+            </div>
+
+            <div class="consult-card">
+                <div style="font-size: 3rem;">💻</div>
+                <h3>Видео-консультация</h3>
+                <div class="price">100 руб.</div>
+                <ul>
+                    <li>1 час в Zoom/Skype</li>
+                    <li>Демонстрация чертежей</li>
+                    <li>Помощь в настройках</li>
+                </ul>
+                <a href="#" class="btn btn-warning">Заказать</a>
+            </div>
+
+            <div class="consult-card">
+                <div style="font-size: 3rem;">🏭</div>
+                <h3>Выезд на объект</h3>
+                <div class="price">300 руб.</div>
+                <ul>
+                    <li>Аудит оборудования</li>
+                    <li>Диагностика проблем</li>
+                    <li>План модернизации</li>
+                </ul>
+                <a href="#" class="btn">Заказать</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-contacts">
+                    <h3>Свяжитесь с нами</h3>
+                    <p>📞 <a href="tel:+375XXXXXXXXX">+375 (29) XXX-XX-XX</a></p>
+                </div>
+                <div class="footer-address">
+                    <h3>📍 Минск</h3>
+                    <p>ул. Промышленная, д. 5</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Разработано с ✈️ @Ksush_0
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
