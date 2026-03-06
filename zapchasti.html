@@ -6,829 +6,421 @@
     <title>Запчасти для бетонных заводов | ТехноБетонКомплект</title>
     <style>
         /* === ОСНОВНЫЕ СТИЛИ === */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-}
-
-body {
-    background-color: #F8F4ED;
-    color: #2C3E4F;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* === ШАПКА === */
-header {
-    background: linear-gradient(135deg, #0B2A4A 0%, #143b5e 100%);
-    color: white;
-    padding: 1.5rem 0 1rem 0;
-    border-bottom: 3px solid #C9A959;
-    box-shadow: 0 10px 25px -10px rgba(11, 42, 74, 0.3);
-}
-
-.header-top {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-header h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-header h1 a {
-    color: white;
-    text-decoration: none;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    color: #E0D6C1;
-    font-weight: 300;
-    letter-spacing: 2px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    display: inline-block;
-    padding: 0.5rem 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 50px;
-}
-
-/* === МЕНЮ === */
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem 0 0.5rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.main-nav a {
-    color: #E0D6C1;
-    text-decoration: none;
-    padding: 0.7rem 1.8rem;
-    border-radius: 50px;
-    transition: all 0.3s;
-    font-weight: 500;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    border: 1px solid transparent;
-}
-
-.main-nav a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border-color: #C9A959;
-}
-
-.main-nav a.active {
-    background: #C9A959;
-    color: #0B2A4A;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(201, 169, 89, 0.3);
-}
-
-.tagline {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #B6CDE0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-    text-align: center;
-    padding-bottom: 1rem;
-}
-
-/* === КНОПКИ (ЕДИНЫЙ СТИЛЬ) === */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.btn-primary {
-    background: #0B2A4A;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #1E4A6F;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(11, 42, 74, 0.3);
-}
-
-.btn-accent {
-    background: #C9A959;
-    color: #0B2A4A;
-}
-
-.btn-accent:hover {
-    background: #b89a4a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(201, 169, 89, 0.3);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 2px solid #C9A959;
-    color: white;
-}
-
-.btn-outline:hover {
-    background: #C9A959;
-    color: #0B2A4A;
-    transform: translateY(-2px);
-}
-
-/* === ГЛАВНАЯ СТРАНИЦА === */
-.hero {
-    background: #F5F2E9;
-    border-bottom: 1px solid #E2D9CC;
-    padding: 4rem 0;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    color: #0B2A4A;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.hero .accent {
-    color: #1E4A6F;
-    font-weight: 600;
-    border-bottom: 2px solid #C9A959;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.feature-item {
-    background: #F8F4ED;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    border-left: 4px solid #1E4A6F;
-}
-
-.feature-item h3 {
-    color: #0B2A4A;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-/* === ОТЗЫВЫ === */
-.reviews {
-    background: #F5F2E9;
-    padding: 3rem 0;
-}
-
-.reviews h2 {
-    text-align: center;
-    color: #0B2A4A;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.review-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.review-card {
-    background: #F8F4ED;
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid #E2D9CC;
-}
-
-.review-card p {
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #2C3E4F;
-}
-
-.review-author {
-    color: #0B2A4A;
-    font-weight: 600;
-}
-
-/* === УСЛУГИ === */
-.services {
-    padding: 4rem 0;
-    background: #ECE6DB;
-}
-
-.services h2 {
-    text-align: center;
-    color: #0B2A4A;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.service-card {
-    background: #F8F4ED;
-    border-radius: 20px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    border: 1px solid #E2D9CC;
-    box-shadow: 0 10px 20px -10px rgba(11, 42, 74, 0.1);
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    border-color: #1E4A6F;
-    box-shadow: 0 20px 25px -5px rgba(11, 42, 74, 0.2);
-    background: white;
-}
-
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    color: #0B2A4A;
-    margin-bottom: 0.8rem;
-    font-size: 1.5rem;
-}
-
-.service-card p {
-    color: #4A5F73;
-    font-size: 0.95rem;
-}
-
-/* === СТРАНИЦА ЗАПЧАСТЕЙ === */
-.page-header {
-    text-align: center;
-    padding: 3rem 0 2rem 0;
-}
-
-.page-header h2 {
-    font-size: 2.5rem;
-    color: #0B2A4A;
-    margin-bottom: 1rem;
-}
-
-.page-header p {
-    font-size: 1.2rem;
-    color: #4A5F73;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.catalog-item {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid #E2D9CC;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-}
-
-.catalog-item:hover {
-    transform: translateY(-5px);
-    border-color: #C9A959;
-    box-shadow: 0 15px 30px rgba(11, 42, 74, 0.1);
-}
-
-.catalog-item h3 {
-    color: #0B2A4A;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    border-bottom: 2px solid #C9A959;
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-.catalog-item .price {
-    font-size: 1.5rem;
-    color: #1E4A6F;
-    font-weight: 600;
-    margin: 1rem 0;
-}
-
-.catalog-item ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.catalog-item li {
-    padding: 0.3rem 0;
-    color: #4A5F73;
-}
-
-.catalog-item li:before {
-    content: "✓ ";
-    color: #C9A959;
-    font-weight: 600;
-}
-
-/* === СТРАНИЦА ШЕФМОНТАЖА === */
-.service-detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.service-card-large {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid #E2D9CC;
-    box-shadow: 0 10px 20px -10px rgba(11, 42, 74, 0.1);
-}
-
-.service-card-large h3 {
-    color: #0B2A4A;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #C9A959;
-    padding-bottom: 0.5rem;
-}
-
-.service-list {
-    list-style: none;
-    padding: 0;
-}
-
-.service-list li {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #F0E8DD;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.service-list li:before {
-    content: "✓";
-    color: #C9A959;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.price-table {
-    background: #F5F2E9;
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.8rem 0;
-    border-bottom: 1px dashed #C9A959;
-}
-
-.price-row:last-child {
-    border-bottom: none;
-}
-
-.advantages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.advantage-item {
-    text-align: center;
-}
-
-.advantage-item .number {
-    font-size: 2.5rem;
-    color: #C9A959;
-    font-weight: 600;
-}
-
-/* === СТРАНИЦА КОНСУЛЬТАЦИЙ === */
-.consult-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.consult-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid #E2D9CC;
-    text-align: center;
-    box-shadow: 0 10px 20px -10px rgba(11, 42, 74, 0.1);
-}
-
-.consult-card h3 {
-    color: #0B2A4A;
-    font-size: 1.8rem;
-    margin: 1rem 0;
-}
-
-.consult-card .price {
-    font-size: 1.5rem;
-    color: #C9A959;
-    font-weight: 600;
-    margin: 1rem 0;
-}
-
-.consult-card ul {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.consult-card li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #F0E8DD;
-}
-
-.consult-card li:before {
-    content: "✓ ";
-    color: #C9A959;
-}
-
-/* === ПОДВАЛ === */
-footer {
-    background: #0B2A4A;
-    color: white;
-    padding: 3rem 0 1rem 0;
-    margin-top: 2rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.footer-contacts p {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-contacts a {
-    color: #D6C9B5;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-contacts a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.footer-address {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border-left: 3px solid #C9A959;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid #1E4A6F;
-    font-size: 0.9rem;
-    color: #B6CDE0;
-}
-
-.copyright a {
-    color: white;
-    text-decoration: none;
-    background: rgba(201, 169, 89, 0.2);
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: background 0.2s;
-}
-
-.copyright a:hover {
-    background: rgba(201, 169, 89, 0.4);
-}
-
-/* === ПОЛНОСТЬЮ АДАПТИВНЫЙ ДИЗАЙН ДЛЯ МОБИЛЬНЫХ === */
-@media (max-width: 768px) {
-    /* Общие настройки */
-    .container {
-        padding: 0 15px;
-    }
-
-    /* Шапка */
-    header {
-        padding: 1rem 0;
-    }
-    
-    header h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2;
-    }
-    
-    .subtitle {
-        font-size: 0.9rem !important;
-        padding: 0.4rem 1rem !important;
-        white-space: normal;
-        line-height: 1.4;
-        max-width: 100%;
-    }
-
-    /* Меню - вертикальное на мобильных */
-    .main-nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        padding: 1rem 0;
-    }
-    
-    .main-nav a {
-        text-align: center;
-        padding: 0.8rem !important;
-        font-size: 1rem !important;
-        display: block;
-        width: 100%;
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .tagline {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    /* Герой-блок */
-    .hero {
-        padding: 2rem 0;
-    }
-    
-    .hero-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem !important;
-        text-align: center;
-    }
-    
-    .features {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* Отзывы */
-    .reviews {
-        padding: 2rem 0;
-    }
-    
-    .reviews h2 {
-        font-size: 1.8rem;
-    }
-    
-    .review-cards {
-        grid-template-columns: 1fr !important;
-        gap: 1rem;
-    }
-    
-    .review-card {
-        margin: 0;
-    }
-
-    /* Услуги */
-    .services {
-        padding: 2rem 0;
-    }
-    
-    .services h2 {
-        font-size: 1.8rem;
-    }
-    
-    .service-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem;
-    }
-    
-    .service-card {
-        padding: 1.5rem;
-    }
-
-    /* Подвал */
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-    
-    .footer-address {
-        text-align: center;
-    }
-    
-    .footer-contacts {
-        text-align: center;
-    }
-    
-    .footer-contacts p {
-        justify-content: center;
-    }
-
-    /* Для страницы запчастей */
-    .page-header h2 {
-        font-size: 2rem;
-    }
-    
-    .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
         }
-@media (max-width: 768px) {
-    .catalog-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .catalog-item {
-        padding: 1.2rem;
-    }
-    
-    .catalog-item h3 {
-        font-size: 1.5rem;
-    }
-    
-    .catalog-item .price {
-        font-size: 1.3rem;
-    }
 
-    /* Для страницы шефмонтажа */
-    .service-detail {
-        grid-template-columns: 1fr !important;
-    }
-    
-    .service-card-large {
-        padding: 1.5rem;
-    }
-    
-    .service-card-large h3 {
-        font-size: 1.5rem;
-    }
-    
-    .advantages {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-    }
+        body {
+            background-color: #F8F4ED;
+            color: #2C3E4F;
+            line-height: 1.6;
+        }
 
-    /* Для страницы консультаций */
-    .consult-options {
-        grid-template-columns: 1fr !important;
-        gap: 1rem;
-    }
-    
-    .consult-card {
-        padding: 1.5rem;
-    }
-    
-    .consult-card h3 {
-        font-size: 1.5rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    /* Кнопки */
-    .btn, .btn-primary, .btn-accent, .btn-outline {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 0.5rem 0;
-        padding: 12px 20px;
-    }
+        /* === ШАПКА === */
+        header {
+            background: linear-gradient(135deg, #0B2A4A 0%, #143b5e 100%);
+            color: white;
+            padding: 1.5rem 0 1rem 0;
+            border-bottom: 3px solid #C9A959;
+            box-shadow: 0 10px 25px -10px rgba(11, 42, 74, 0.3);
+        }
 
-    /* Блоки с акциями */
-    .special-offer {
-        padding: 2rem 1rem !important;
-        margin: 2rem 0;
-    }
-    
-    .special-offer h3 {
-        font-size: 1.5rem !important;
-    }
+        .header-top {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
 
-    /* Таблицы цен */
-    .price-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        text-align: center;
-    }
-}
+        header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-/* Для очень маленьких телефонов */
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem !important;
-    }
-    
-    .hero h2 {
-        font-size: 1.5rem !important;
-    }
-    
-    .service-icon {
-        font-size: 2.5rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    .feature-item {
-        padding: 1rem;
-    }
-    
-    .page-header h2 {
-        font-size: 1.8rem;
-    }
+        header h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #E0D6C1;
+            font-weight: 300;
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50px;
+        }
+
+        /* === МЕНЮ === */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0 0.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: #E0D6C1;
+            text-decoration: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+
+        .main-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: #C9A959;
+        }
+
+        .main-nav a.active {
+            background: #C9A959;
+            color: #0B2A4A;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(201, 169, 89, 0.3);
+        }
+
+        /* === КНОПКИ === */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #0B2A4A;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1E4A6F;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(11, 42, 74, 0.3);
+        }
+
+        .btn-accent {
+            background: #C9A959;
+            color: #0B2A4A;
+        }
+
+        .btn-accent:hover {
+            background: #b89a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 169, 89, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #C9A959;
+            color: inherit;
+        }
+
+        .btn-outline:hover {
+            background: #C9A959;
+            color: #0B2A4A;
+            transform: translateY(-2px);
+        }
+
+        /* === СТРАНИЦА ЗАПЧАСТЕЙ === */
+        .page-header {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+        }
+
+        .page-header h2 {
+            font-size: 2.5rem;
+            color: #0B2A4A;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: #4A5F73;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .catalog-item {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #E2D9CC;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            border-color: #C9A959;
+            box-shadow: 0 15px 30px rgba(11, 42, 74, 0.1);
+        }
+
+        .catalog-item h3 {
+            color: #0B2A4A;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #C9A959;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .catalog-item .price {
+            font-size: 1.5rem;
+            color: #1E4A6F;
+            font-weight: 600;
+            margin: 1rem 0;
+        }
+
+        .catalog-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .catalog-item li {
+            padding: 0.3rem 0;
+            color: #4A5F73;
+        }
+
+        .catalog-item li:before {
+            content: "✓ ";
+            color: #C9A959;
+            font-weight: 600;
+        }
+
+        /* === СПЕЦПРЕДЛОЖЕНИЕ === */
+        .special-offer {
+            background: #0B2A4A;
+            color: white;
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid #C9A959;
+        }
+
+        .special-offer h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #C9A959;
+        }
+
+        /* === ПОДВАЛ === */
+        footer {
+            background: #0B2A4A;
+            color: white;
+            padding: 3rem 0 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contacts p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contacts a {
+            color: #D6C9B5;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contacts a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-address {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid #C9A959;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #1E4A6F;
+            font-size: 0.9rem;
+            color: #B6CDE0;
+        }
+
+        .copyright a {
+            color: white;
+            text-decoration: none;
+            background: rgba(201, 169, 89, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.2s;
+        }
+
+        .copyright a:hover {
+            background: rgba(201, 169, 89, 0.4);
+        }
+
+        /* === АДАПТИВНЫЙ ДИЗАЙН === */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            header {
+                padding: 1rem 0;
+            }
+            
+            header h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem !important;
+                padding: 0.4rem 1rem !important;
+                white-space: normal;
+            }
+
+            .main-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .main-nav a {
+                text-align: center;
+                padding: 0.8rem !important;
+                font-size: 1rem !important;
+                width: 100%;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem;
+            }
+            
+            .catalog-item {
+                padding: 1.5rem;
+            }
+            
+            .catalog-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+            }
+            
+            .footer-address, .footer-contacts {
+                text-align: center;
+            }
+            
+            .footer-contacts p {
+                justify-content: center;
+            }
+
+            .btn, .btn-primary, .btn-accent, .btn-outline {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+
+            .special-offer {
+                padding: 2rem 1rem !important;
+            }
+            
+            .special-offer h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            .special-offer .btn {
+                margin: 0.5rem 0;
+            }
+            
+            .btn-outline {
+                color: white;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- ШАПКА (как на главной, но с навигацией) -->
     <header>
         <div class="container">
-            <h1><a href="index.html">ТехноБетонКомплект</a></h1>
-            <div class="subtitle">ЗАПЧАСТИ ДЛЯ БЕТОННЫХ ЗАВОДОВ</div>
+            <div class="header-top">
+                <h1><a href="index.html">ТехноБетонКомплект</a></h1>
+                <div class="subtitle">ЗАПЧАСТИ ДЛЯ БЕТОННЫХ ЗАВОДОВ</div>
+            </div>
             
-            <!-- Навигация по разделам -->
-            <div class="nav-links">
+            <nav class="main-nav">
                 <a href="index.html">Главная</a>
                 <a href="zapchasti.html" class="active">Запчасти</a>
                 <a href="shefmontazh.html">Шефмонтаж</a>
                 <a href="konsultacii.html">Консультации</a>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ - ЗАПЧАСТИ -->
     <div class="container">
         <div class="page-header">
             <h2>Каталог запчастей</h2>
             <p>Оригинальные и совместимые запчасти со склада в Минске. Доставка по всей Беларуси.</p>
         </div>
 
-        <!-- Сетка каталога -->
         <div class="catalog-grid">
-            <!-- Редукторы -->
             <div class="catalog-item">
                 <h3>Редукторы</h3>
                 <div class="price">от 1 200 руб.</div>
@@ -838,10 +430,9 @@ footer {
                     <li>Для питателей (Червячные)</li>
                     <li>В наличии 15+ моделей</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Уточнить наличие</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Уточнить наличие</a>
             </div>
 
-            <!-- Датчики -->
             <div class="catalog-item">
                 <h3>Датчики</h3>
                 <div class="price">от 350 руб.</div>
@@ -851,10 +442,9 @@ footer {
                     <li>Давления (Wika, Jumo)</li>
                     <li>Готовы подобрать аналог</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Подобрать датчик</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Подобрать датчик</a>
             </div>
 
-            <!-- Ремни -->
             <div class="catalog-item">
                 <h3>Ремни приводные</h3>
                 <div class="price">от 80 руб.</div>
@@ -864,10 +454,9 @@ footer {
                     <li>Continental (Германия)</li>
                     <li>Все типы: клиновые, поликлиновые</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Выбрать ремень</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Выбрать ремень</a>
             </div>
 
-            <!-- Электродвигатели -->
             <div class="catalog-item">
                 <h3>Электродвигатели</h3>
                 <div class="price">от 1 500 руб.</div>
@@ -877,10 +466,9 @@ footer {
                     <li>Мощность 0.25–250 кВт</li>
                     <li>С хранения и новые</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Подобрать двигатель</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Подобрать двигатель</a>
             </div>
 
-            <!-- Подшипники -->
             <div class="catalog-item">
                 <h3>Подшипники</h3>
                 <div class="price">от 45 руб.</div>
@@ -890,10 +478,9 @@ footer {
                     <li>NSK (Япония)</li>
                     <li>EPK (Украина) — бюджет</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Запросить цену</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Запросить цену</a>
             </div>
 
-            <!-- Запчасти для смесителей -->
             <div class="catalog-item">
                 <h3>Для смесителей</h3>
                 <div class="price">индивидуально</div>
@@ -903,41 +490,38 @@ footer {
                     <li>Уплотнения, манжеты</li>
                     <li>Под заказ 3-5 дней</li>
                 </ul>
-                <a href="#" class="btn btn-warning">Оставить заявку</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent">📞 Оставить заявку</a>
             </div>
         </div>
 
-        <!-- Спецпредложение -->
         <div class="special-offer">
             <h3>⚡ Нужна редкая запчасть?</h3>
             <p style="font-size: 1.2rem; margin-bottom: 2rem;">Найдем в Европе, России или Китае под ваш бюджет</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#" class="btn btn-warning" style="font-size: 1.2rem;">Отправить список запчастей</a>
-                <a href="tel:+375XXXXXXXXX" class="btn" style="background: transparent; border: 2px solid #C9A959;">Позвонить</a>
+                <a href="tel:+375XXXXXXXXX" class="btn btn-accent" style="font-size: 1.2rem;">📞 Позвонить</a>
+                <a href="#" class="btn btn-outline" style="font-size: 1.2rem;">✈️ Написать в Telegram</a>
             </div>
         </div>
 
-        <!-- Блок "Почему мы" -->
         <div style="background: #F5F2E9; border-radius: 20px; padding: 2rem; margin: 3rem 0;">
-            <h3 style="color: #0B2A4A; font-size: 1.8rem; margin-bottom: 1.5rem;">Почему выбирают наши запчасти</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <h3 style="color: #0B2A4A; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Почему выбирают наши запчасти</h3>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: center;">
                 <div>
-                    <div style="font-size: 2rem; color: #C9A959;">20+</div>
-                    <p>поставщиков в Европе и Азии</p>
+                    <div style="font-size: 2.5rem; color: #C9A959; font-weight: 600;">20+</div>
+                    <p style="color: #4A5F73;">поставщиков в Европе и Азии</p>
                 </div>
                 <div>
-                    <div style="font-size: 2rem; color: #C9A959;">3-5</div>
-                    <p>дня средний срок поставки</p>
+                    <div style="font-size: 2.5rem; color: #C9A959; font-weight: 600;">3-5</div>
+                    <p style="color: #4A5F73;">дня средний срок поставки</p>
                 </div>
                 <div>
-                    <div style="font-size: 2rem; color: #C9A959;">100%</div>
-                    <p>гарантия на все позиции</p>
+                    <div style="font-size: 2.5rem; color: #C9A959; font-weight: 600;">100%</div>
+                    <p style="color: #4A5F73;">гарантия на все позиции</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ПОДВАЛ (точно такой же, как на главной) -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -946,8 +530,8 @@ footer {
                     <p>📞 <a href="tel:+375XXXXXXXXX">+375 (29) XXX-XX-XX</a></p>
                     <p>✉️ <a href="mailto:info@tehnobeton.by">info@tehnobeton.by</a></p>
                     <p style="margin-top: 1rem;">
-                        <a href="#" style="background: #1E4A6F; padding: 8px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 5px;">💬 Viber</a>
-                        <a href="#" style="background: #1E4A6F; padding: 8px 16px; border-radius: 30px; margin-left: 10px; display: inline-flex; align-items: center; gap: 5px;">✈️ Telegram</a>
+                        <a href="#" class="btn btn-primary" style="background: #1E4A6F; padding: 8px 16px;">💬 Viber</a>
+                        <a href="#" class="btn btn-primary" style="background: #1E4A6F; padding: 8px 16px; margin-left: 10px;">✈️ Telegram</a>
                     </p>
                 </div>
                 <div class="footer-address">
@@ -963,4 +547,4 @@ footer {
         </div>
     </footer>
 </body>
-</html>
+    </html>
