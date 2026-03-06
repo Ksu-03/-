@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="ТехноБетонКомплект">
-    <title>ТехноБетонКомплект - запчасти и автоматизация</title>
+    <title>ТехноБетонКомплект - запчасти, шефмонтаж, автоматизация</title>
     <style>
         * {
             margin: 0;
@@ -14,8 +13,8 @@
         }
 
         body {
-            background-color: #F8F4ED;  /* Теплый молочный фон */
-            color: #2C3E4F; /* Темный сине-серый для текста */
+            background-color: #F8F4ED;
+            color: #2C3E4F;
             line-height: 1.6;
         }
 
@@ -25,65 +24,98 @@
             padding: 0 20px;
         }
 
-        /* --- ОБНОВЛЕННАЯ ШАПКА --- */
+        /* --- ШАПКА С КРАСИВЫМ МЕНЮ --- */
         header {
             background: linear-gradient(135deg, #0B2A4A 0%, #143b5e 100%);
             color: white;
-            padding: 2.5rem 0;
-            text-align: center;
-            border-bottom: 3px solid #C9A959; /* Тонкая золотистая линия для статуса */
+            padding: 1.5rem 0 1rem 0;
+            border-bottom: 3px solid #C9A959;
             box-shadow: 0 10px 25px -10px rgba(11, 42, 74, 0.3);
-            position: relative;
         }
 
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #C9A959, #8B6B3C, #C9A959);
+        .header-top {
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
         header h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-        header .subtitle {
-            font-size: 1.4rem;
-            color: #E0D6C1;  /* Молочный текст */
+        header h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #E0D6C1;
             font-weight: 300;
             letter-spacing: 2px;
-            word-spacing: 8px;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             display: inline-block;
-            padding: 0.8rem 2rem;
-            backdrop-filter: blur(5px);
+            padding: 0.5rem 2rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 50px;
-            margin-top: 0.5rem;
         }
 
-        header .tagline {
-            margin-top: 1.5rem;
+        /* КРАСИВОЕ МЕНЮ (ГОРИЗОНТАЛЬНОЕ) */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0 0.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: #E0D6C1;
+            text-decoration: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+
+        .main-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: #C9A959;
+        }
+
+        .main-nav a.active {
+            background: #C9A959;
+            color: #0B2A4A;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(201, 169, 89, 0.3);
+        }
+
+        .tagline {
+            margin-top: 1rem;
             font-size: 1.2rem;
             color: #B6CDE0;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.8;
+            text-align: center;
+            padding-bottom: 1rem;
         }
 
         /* --- Маркетинговый блок (Hero) --- */
         .hero {
-            background: #F5F2E9;  /* Молочный */
+            background: #F5F2E9;
             border-bottom: 1px solid #E2D9CC;
             padding: 4rem 0;
         }
@@ -169,7 +201,7 @@
         /* --- Услуги (кликабельные карточки) --- */
         .services {
             padding: 4rem 0;
-            background: #ECE6DB;  /* Чуть темнее молочный */
+            background: #ECE6DB;
         }
 
         .services h2 {
@@ -220,7 +252,7 @@
             font-size: 0.95rem;
         }
 
-        /* --- Подвал / Колонтитул --- */
+        /* --- Подвал --- */
         footer {
             background: #0B2A4A;
             color: white;
@@ -285,44 +317,44 @@
             background: rgba(201, 169, 89, 0.4);
         }
 
-        /* Адаптация под телефоны */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header .subtitle {
-                font-size: 1rem;
-                padding: 0.5rem 1rem;
-            }
-            
+            header h1 { font-size: 2.2rem; }
             .hero-grid, .review-cards, .service-grid, .footer-grid {
                 grid-template-columns: 1fr;
+            }
+            .main-nav {
+                gap: 0.5rem;
+            }
+            .main-nav a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- ОБНОВЛЕННАЯ ШАПКА -->
     <header>
         <div class="container">
-            <h1>ТехноБетонКомплект</h1>
-            <div class="subtitle">ИНЖИНИРИНГ · ПОСТАВКИ · АВТОМАТИЗАЦИЯ</div>
-            <div class="nav-links">
-    <a href="index.html" class="active">Главная</a>
-    <a href="zapchasti.html">Запчасти</a>
-    <a href="shefmontazh.html">Шефмонтаж</a>
-    <a href="konsultacii.html">Консультации</a>
+            <div class="header-top">
+                <h1><a href="index.html">ТехноБетонКомплект</a></h1>
+                <div class="subtitle">ИНЖИНИРИНГ · ПОСТАВКИ · АВТОМАТИЗАЦИЯ</div>
             </div>
+            
+            <!-- КРАСИВОЕ МЕНЮ -->
+            <nav class="main-nav">
+                <a href="index.html" class="active">Главная</a>
+                <a href="zapchasti.html">Запчасти</a>
+                <a href="shefmontazh.html">Шефмонтаж</a>
+                <a href="konsultacii.html">Консультации</a>
+            </nav>
+            
             <div class="tagline">
-                Полный цикл обслуживания бетонных заводов: от редкой запчасти<br>
-                до полной автоматизации производства
+                Полный цикл обслуживания бетонных заводов: от редкой запчасти до полной автоматизации производства
             </div>
         </div>
     </header>
 
-    <!-- Маркетинговая часть (Hero + Опыт) -->
+    <!-- Далее идет весь остальной контент как был -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
@@ -348,7 +380,6 @@
         </div>
     </section>
 
-    <!-- Отзывы -->
     <section class="reviews">
         <div class="container">
             <h2>Нас рекомендуют</h2>
@@ -369,22 +400,21 @@
         </div>
     </section>
 
-    <!-- Услуги (Кликабельные карточки) -->
     <section class="services">
         <div class="container">
             <h2>Наши услуги</h2>
             <div class="service-grid">
-                <a href="#" class="service-card">
+                <a href="zapchasti.html" class="service-card">
                     <div class="service-icon">🔩</div>
                     <h3>Запчасти</h3>
                     <p>Редукторы, ремни, датчики, двигатели для бетонных узлов. В наличии и под заказ.</p>
                 </a>
-                <a href="#" class="service-card">
+                <a href="shefmontazh.html" class="service-card">
                     <div class="service-icon">👷</div>
                     <h3>Шефмонтаж</h3>
                     <p>Выезд специалиста, пусконаладка, обучение персонала. Работаем по всей РБ.</p>
                 </a>
-                <a href="#" class="service-card">
+                <a href="konsultacii.html" class="service-card">
                     <div class="service-icon">📋</div>
                     <h3>Консультации</h3>
                     <p>Аудит оборудования, помощь в ремонте, модернизация производства онлайн или на объекте.</p>
@@ -393,7 +423,6 @@
         </div>
     </section>
 
-    <!-- Подвал -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -412,15 +441,11 @@
                     <p style="color: #D6C9B5; margin-top: 1rem;">Пн-Пт 9:00 - 18:00</p>
                 </div>
             </div>
-
             <div class="copyright">
                 Разработано совместно с 
-                <a href="https://t.me/Ksush_0" target="_blank">
-                    ✈️ @Ksush_0
-                </a>
+                <a href="https://t.me/Ksush_0" target="_blank">✈️ @Ksush_0</a>
             </div>
         </div>
     </footer>
 </body>
     </html>
-                
