@@ -691,16 +691,28 @@ footer {
     }
     
     .catalog-grid {
-        grid-template-columns: 1fr !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
     
     .catalog-item {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
     
     .catalog-item h3 {
         font-size: 1.5rem;
+    }
+    
+    .catalog-item .price {
+        font-size: 1.3rem;
     }
 
     /* Для страницы шефмонтажа */
