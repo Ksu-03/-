@@ -510,6 +510,73 @@
     .copyright {
         font-size: 0.75rem;
     }
+    /* === РАСШИРЕНИЕ НА ВЕСЬ ЭКРАН === */
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* убирает горизонтальный скролл */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px; /* увеличил максимальную ширину */
+    margin: 0 auto;
+    padding: 0 30px; /* чуть больше отступы по бокам */
+}
+
+/* Для очень широких экранов */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+        padding: 0 40px;
+    }
+}
+
+/* Для мобильных - отступы меньше */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Растягиваем фоновые блоки на всю ширину */
+header,
+.hero,
+.reviews,
+.services,
+footer,
+.special-offer,
+div[style*="background"] {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Убираем возможные белые полосы */
+body {
+    background-color: #F8F4ED; /* цвет фона как у сайта */
+}
+
+/* Специально для блоков с фоновым цветом */
+.hero, .reviews, .services {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Компенсация для контейнера внутри */
+.hero .container,
+.reviews .container,
+.services .container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+            }
 }
 
 /* Для очень маленьких телефонов (до 400px) */
